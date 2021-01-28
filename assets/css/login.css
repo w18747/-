@@ -1,0 +1,65 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: url(../images/login_bg.jpg);
+    /* cover覆盖完整个容器,container会有覆盖不完全的情况 */
+    background-size: cover;
+}
+
+.logo {
+    position: absolute;
+    left: 40px;
+    top: 20px;
+}
+
+.content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 310px;
+    background-color: #fff;
+}
+
+.layui-form {
+    padding: 0 30px;
+    margin-bottom: 15px;
+}
+
+.content .title {
+    height: 60px;
+    /* 给父元素设置flex布局，主轴设置居中布局 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link a {
+    float: right;
+}
+
+
+/* 子绝父相 */
+
+.layui-form-item {
+    position: relative;
+}
+
+
+/* 定位输入框上的图标 */
+
+.layui-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.layui-input {
+    padding-left: 35px;
+}
