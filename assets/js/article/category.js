@@ -98,12 +98,14 @@ $(function() {
             axios.get(`/my/article/deletecate/${id}`).then(res => {
                 console.log(res);
                 if (res.status !== 0) {
-                    return layer.msg('获取失败!')
+                    return layer.msg('删除文章分类失败!')
+                } else {
+                    layer.msg('删除文章类别成功！')
                 }
                 layer.close(index);
                 getCateList()
             })
-        });
+        })
 
     })
 
