@@ -34,11 +34,6 @@
       //从layui中提取模块
       const { layer } = layui
 
-
-
-
-
-
       //2.点击退出
       $('#logout').click(function() {
           //请求接口(模拟)
