@@ -14,8 +14,6 @@ $(function() {
             }
         }
 
-
-
     })
     $('.layui-form').submit(function(e) {
         e.preventDefault()
@@ -25,8 +23,14 @@ $(function() {
             if (res.status !== 0) {
                 return layer.msg('修改密码失败')
 
+            } else {
+                layer.msg('修改密码成功!');
+                //1.清除token
+                localStorage.removeItem('token');
+                //2.跳转到登录页面
+                window.parent.location.href = '../login.html'
             }
-            layer.msg('修改密码成功 ')
+
         })
     })
 
