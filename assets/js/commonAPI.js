@@ -3,7 +3,7 @@ axios.defaults.baseURL = 'http://api-breakingnews-web.itheima.net'
 
 // 添加全局请求拦截器
 axios.interceptors.request.use(function(config) {
-    console.log('----发送 axjax请求前', config);
+    // console.log('----发送 axjax请求前', config);
 
     //获取本地存储的token令牌
     const token = localStorage.getItem('token') || ''
@@ -25,7 +25,7 @@ axios.interceptors.request.use(function(config) {
 
 // 添加响应拦截器
 axios.interceptors.response.use(function(response) {
-        console.log('----接受 axajx响应前', response);
+        // console.log('----接受 axajx响应前', response);
         const { message, status } = response.data;
         //先判断身份验证是否成功
         if (message == '身份认证失败！' && status == 1) {

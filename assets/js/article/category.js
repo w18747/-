@@ -5,7 +5,7 @@ $(function() {
     //1.从服务器获取文章列表数据,并渲染到页面
     function getCateList() {
         axios.get('/my/article/cates').then(res => {
-            console.log(res);
+            // console.log(res);
             //判断请求失败
             if (res.status !== 0) {
                 return layer.msg('获取分类列表失败!')
@@ -37,7 +37,7 @@ $(function() {
         //3.1发送请求,把表单数据提交到服务器中
         axios.post('/my/article/addcates', $(this).serialize())
             .then(res => {
-                console.log(res);
+                // console.log(res);
                 //3.2 判断失败
                 if (res.status !== 0) {
                     return layer.msg('添加文章失败!')
@@ -60,7 +60,7 @@ $(function() {
         const id = $(this).data('id');
         //4.3 发送请求，获取当前的分类数据
         axios.get(`/my/article/cates/${id}`).then(res => {
-            console.log(res);
+            // console.log(res);
             //判断是否失败
             if (res.status !== 0) {
                 return layer.msg('获取失败!')
@@ -79,7 +79,7 @@ $(function() {
         //发送请求,把表单数据提交到服务器中
         axios.post('/my/article/updatecate', $(this).serialize())
             .then(res => {
-                console.log(res);
+                // console.log(res);
                 //判断失败
                 if (res.status !== 0) {
                     return layer.msg('更新失败!')
@@ -91,14 +91,15 @@ $(function() {
     })
 
 
-
+    //6.点击删除按钮,删除当前这条分类
     $(document).on('click', '.del-btn', function() {
         const id = $(this).data('id');
         layer.confirm('确定删除?', { icon: 3, title: '提示' }, function(index) {
+            // 6.2 发送请求到服务器,删除这条分类
             axios.get(`/my/article/deletecate/${id}`).then(res => {
-                console.log(res);
+                // console.log(res);
                 if (res.status !== 0) {
-                    return layer.msg('删除文章分类失败!')
+                    return layer.msg('删除文章类别失败!')
                 } else {
                     layer.msg('删除文章类别成功！')
                 }
@@ -108,20 +109,5 @@ $(function() {
         })
 
     })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 })
