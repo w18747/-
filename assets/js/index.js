@@ -34,13 +34,22 @@
       //从layui中提取模块
       const { layer } = layui
 
-      //2.点击退出
-      $('#logout').click(function() {
+
+
+  });
+  //2.点击退出
+  $('#logout').click(function() {
+
+      layer.confirm('确认退出?', { icon: 3, title: '提示' }, function(index) {
+
+
           //请求接口(模拟)
           //1.清除token
-          localStorage.removeItem('token')
-              //2.跳转到登录页面
+          localStorage.removeItem('token');
+          //2.跳转到登录页面
           location.href = './login.html'
+          layer.close(index);
+
       })
 
 
